@@ -1,11 +1,15 @@
 (function() {
-    function SmartPhone(option,operatingSystem) {
+    var operatingSystem = "";
+    function SmartPhone(option) {
         Phone.call(this, option);
-        if (operatingSystem == null) {
-            operatingSystem = "";
+        if (!option) {
+            console.log("smartPhone에 option이 필요합니다.")
+            option = {};
+            if (option.operatingSystem == null) {
+                option.operatingSystem = "";
+            }
         }
-
-        this.operatingSystem = operatingSystem;
+        operatingSystem = option.operatingSystem;
     }
 
     SmartPhone.prototype = new Phone();
@@ -20,8 +24,8 @@
     };
 
     SmartPhone.prototype.infoOS = function(){
-        if(this.operatingSystem !== ""){
-            console.log("운영체제는 "+this.operatingSystem+"입니다.");
+        if(operatingSystem !== ""){
+            console.log("운영체제는 "+operatingSystem+"입니다.");
         }else{
             console.log("운영체제 정보를 알 수 없습니다.")
         }
