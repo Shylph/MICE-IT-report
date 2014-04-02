@@ -26,8 +26,17 @@
         }
     }
     Phone.prototype.sendMessage = function (recipientNumber, message) {
-        console.log(recipientNumber + "로 메세지를 보냅니다.");
-        console.log(message);
+        if(message ==null){
+            message="";
+        }
+        if(recipientNumber != null){
+            console.log(recipientNumber + "로 메세지를 보냅니다.");
+            console.log("---Message---");
+            console.log(message);
+            console.log("-------------")
+        }else{
+            console.log("메세지를 보낼수 없습니다.");
+        }
     }
     Phone.prototype.infoModelName = function(){
         if(this.modelName !== ""){

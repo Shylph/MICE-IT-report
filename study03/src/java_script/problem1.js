@@ -3,6 +3,7 @@ var smartPhone = new SmartPhone({modelName:"galaxys5", releaseDate:"2014", price
 smartPhone.boot();
 smartPhone.infoModelName();
 smartPhone.infoOS();
+smartPhone.sendMessage("010-1234-1234","자바스크립트 어려워요.");
 smartPhone.playApp();
 smartPhone.calling();
 smartPhone.shoutDown();
