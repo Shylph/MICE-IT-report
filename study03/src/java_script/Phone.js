@@ -1,16 +1,30 @@
-(function() {
+(function () {
+    var number = "";
+    var type = "";
+
     function Phone(option) {
         if (!option) {
             option = {
                 modelName: "",
                 releaseDate: "",
-                price: ""
+                price: "",
+                number: "",
+                type: "feature"
             }
         }
+        type = option.type;
+        number = option.number;
         this.modelName = option.modelName;
         this.releaseDate = option.releaseDate;
         this.price = option.price;
     }
+
+    Phone.prototype.getNumber = function () {
+        return number;
+    };
+    Phone.prototype.getType = function () {
+        return type;
+    };
 
     Phone.prototype.boot = function () {
         console.log("부팅합니다.");
@@ -19,29 +33,29 @@
         console.log("폰이 종료 됩니다..");
     };
     Phone.prototype.calling = function (callNumber) {
-        if(callNumber != null){
+        if (callNumber != null) {
             console.log(callNumber + "로 전화를 겁니다.");
-        }else{
+        } else {
             console.log("전화를 걸수 없습니다.");
         }
     };
     Phone.prototype.sendMessage = function (recipientNumber, message) {
-        if(message ==null){
-            message="";
+        if (message == null) {
+            message = "";
         }
-        if(recipientNumber != null){
+        if (recipientNumber != null) {
             console.log(recipientNumber + "로 메세지를 보냅니다.");
             console.log("---Message---");
             console.log(message);
             console.log("-------------")
-        }else{
+        } else {
             console.log("메세지를 보낼수 없습니다.");
         }
     };
-    Phone.prototype.infoModelName = function(){
-        if(this.modelName !== ""){
-            console.log("모델명은는 "+this.modelName+"입니다.");
-        }else{
+    Phone.prototype.infoModelName = function () {
+        if (this.modelName !== "") {
+            console.log("모델명은는 " + this.modelName + "입니다.");
+        } else {
             console.log("모델명을 알 수 없습니다.")
         }
     };
