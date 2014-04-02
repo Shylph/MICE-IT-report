@@ -17,7 +17,7 @@
         }else{
             console.log("App을 실행 시킬수 없습니다.");
         }
-    }
+    };
 
     SmartPhone.prototype.infoOS = function(){
         if(this.operatingSystem !== ""){
@@ -25,7 +25,7 @@
         }else{
             console.log("운영체제 정보를 알 수 없습니다.")
         }
-    }
+    };
 
     window.SmartPhone = SmartPhone;
 })();
