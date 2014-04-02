@@ -9,7 +9,7 @@
     }
 
     SmartPhone.prototype = new Phone();
-    SmartPhone.constructor = SmartPhone;
+    SmartPhone.prototype.constructor = SmartPhone;
 
     SmartPhone.prototype.playApp = function (appName) {
         if(appName != null) {
