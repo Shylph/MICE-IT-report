@@ -21,6 +21,9 @@ str += '</div>';
 
 wrap.innerHTML = str;
 
-var d1 = document.getElementsByClassName('show');
-d1.cl
+var nextBtn = document.getElementsByClassName('next');
 
+nextBtn.addEventListener("click",next);
+function next(){
+    console.log("test");
+}
