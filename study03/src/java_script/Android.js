@@ -6,8 +6,6 @@ function Android(option) {
     }
     option.type = type;
     Phone.call(this, option);
-
-    Phone.setOption(option);
 }
 
 Android.prototype = new Phone();

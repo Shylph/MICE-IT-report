@@ -9,14 +9,12 @@ function IPhone(option) {
     //     this.option.type = type;
     //      this.option.number = type;
 
-    console.log("SAADSADSDASADS" + option.number);
+    console.log("IPhone" + option.number);
 
     //this.number = option.number;
 //    console.log("aa :" + this.number);
 
-    console.log("aa :" + Phone.type);
     Phone.call(this, option);
-    console.log("adssadads : " + option.type);
 }
 
 

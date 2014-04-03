@@ -1,10 +1,4 @@
 function Phone(option) {
-    this.setOption(option)
-}
-function Phone() {
-}
-Phone.setOption = function (option) {
-    console.log("PPPPPasdaasd");
     if (!option) {
         console.log("Phone에 option이 필요합니다.");
         option = {
@@ -15,14 +9,15 @@ Phone.setOption = function (option) {
             type: "feature"
         }
     }
-    console.log("PPPPP" + option.number);
     this.type = option.type;
     this.number = option.number;
     this.modelName = option.modelName;
     this.releaseDate = option.releaseDate;
     this.price = option.price;
 }
+
 Phone.prototype.getNumber = function () {
+    console.log(this);
     return this.number;
 };
 Phone.prototype.getType = function () {

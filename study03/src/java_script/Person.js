@@ -1,22 +1,25 @@
 (function() {
+    var name ="";
+    var phone ="";
+
     function Person(paraName, paraPhone) {
-        this.name = paraName;
-        this.phone = paraPhone;
+        name = paraName;
+        phone = paraPhone;
     }
 
     Person.prototype.sendSMS = function (target, message) {
-        console.log(this.name+"는 "+target.getName()+"에게 '"+message+"' 메세지를 보냅니다.");
-        this.phone.sendMessage(target.getPhoneNumber(),message);
+        console.log(name+"는 "+target.getName()+"에게 '"+message+"' 메세지를 보냅니다.");
+        phone.sendMessage(target.getPhoneNumber(),message);
     };
 
     Person.prototype.getSMS = function (){
 
     };
     Person.prototype.getName = function(){
-        return this.name;
+        return name;
     }
     Person.prototype.getPhoneNumber = function() {
-        return this.phone.getNumber();
+        return phone.getNumber();
     };
 
     window.Person = Person;
