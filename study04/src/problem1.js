@@ -21,7 +21,7 @@ str += '</div>';
 
 wrap.innerHTML = str;
 
-var nextBtn = document.getElementsByClassName('next');
+var nextBtn = document.getElementById('nextBtn');
 
 nextBtn.addEventListener("click",next);
 function next(){
