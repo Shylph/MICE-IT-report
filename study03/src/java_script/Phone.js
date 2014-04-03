@@ -17,7 +17,6 @@ function Phone(option) {
 }
 
 Phone.prototype.getNumber = function () {
-    console.log(this);
     return this.number;
 };
 Phone.prototype.getType = function () {

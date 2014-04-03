@@ -9,3 +9,6 @@ console.log(sangHun.getName());
 
 
 sangHun.sendSMS(yeongHui, "영희야 안녕??");
+
+
+yeongHui.sendSMS(sangHun, "어 왜???")
