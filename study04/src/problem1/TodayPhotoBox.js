@@ -6,6 +6,8 @@
     var page1Id="page1",page2Id ="page2";
     var nextBtnId = "nextBtn",preBtnId = "preBtn";
     var currentIndex = "currentIndex";
+    var contentPart = "contentPart";
+    var contentBox = "contentBox";
 
     function TodayPhotoBox(todayPhotoSource){
         var todayPhoto = this.convertSourceToBoxPart(todayPhotoSource);
@@ -19,7 +21,7 @@
     };
 
     TodayPhotoBox.prototype.getResultHtmlPage = function(){
-        var result = titleHtml + page1Html + page2Html + btnHtml;
+        var result ="<div class='contentBox'>"+ titleHtml + page1Html + page2Html + btnHtml+"</div>";
         return result;
     };
 
@@ -33,24 +35,25 @@
     TodayPhotoBox.prototype.getDivString = function(id,source,optionStr){
         var result = "<div id='"+id+"' "+optionStr+">"+source+"</div>";
         return result;
-    }
+    };
 
     TodayPhotoBox.prototype.convertSourceToBoxPart = function(todayPhotoSource){
         var imgs = [];
         for(var i=0; i<todayPhotoSource.length; i++){
-            imgs.push("<div><img src='"+todayPhotoSource[i].img+"'><div>"+todayPhotoSource[i].title+"</div></div>");
+            imgs.push("<div class ='"+ contentPart +"'><img src='"+todayPhotoSource[i].img+"'><p>"+todayPhotoSource[i].title+"</p></div>");
         }
         return imgs;
     };
 
     TodayPhotoBox.prototype.createTitleHtml = function(title){
-        titleHtml = "<div><h1>"+title+"</h1></div>";
+        titleHtml = "<div class='contentTitle'><h1>"+title+"</h1></div>";
     };
 
     TodayPhotoBox.prototype.createBtnHtml = function(){
         var str = "<button id ='"+ preBtnId +"'>&lt;</button>";
         str = str + "<strong id = '"+currentIndex+"'>1</strong><span>/</span>2"
         str = str + "<button id ='"+ nextBtnId +"'>&gt;</button>";
+        str="<div class='contentBtn'>"+str+"</div>"
         btnHtml = str;
     };
 
@@ -74,7 +77,7 @@
             page2.className = "";
         }
 
-//      this.changeIndex();
+//      changeIndex();
         var index = document.getElementById(currentIndex);
         var beforeIndex = index.innerHTML;
         var afterIndex=0;

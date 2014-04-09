@@ -1,2 +1,11 @@
 .hide {display: none;}
 .show {display: block;}
+
+.contentBox {width:250px;}
+
+.contentPart {width:125px; float: left;}
+.contentPart p {font-size: 12px;text-align: center}
+
+.contentTitle h1 {font-size: 20px; border-bottom: 1px black solid;}
+
+.contentBtn {text-align: center}
