@@ -1,10 +1,11 @@
 (function(){
-    var page1Id="page1",page2Id ="page2";
-    var page1Html = "", page2Html = "";
-
-    var nextBtnId = "nextBtn",preBtnId = "preBtn";
-    var btnHtml = "";
     var titleHtml = "";
+    var page1Html = "", page2Html = "";
+    var btnHtml = "";
+
+    var page1Id="page1",page2Id ="page2";
+    var nextBtnId = "nextBtn",preBtnId = "preBtn";
+    var currentIndex = "currentIndex";
 
     function TodayPhotoBox(todayPhotoSource){
         var todayPhoto = this.convertSourceToBoxPart(todayPhotoSource);
@@ -15,12 +16,12 @@
     TodayPhotoBox.prototype.displayPhotoBox = function(id){
         var wrap = document.getElementById(id);
         wrap.innerHTML = this.getResultHtmlPage();
-    }
+    };
 
     TodayPhotoBox.prototype.getResultHtmlPage = function(){
         var result = titleHtml + page1Html + page2Html + btnHtml;
         return result;
-    }
+    };
 
     TodayPhotoBox.prototype.dividePage = function(todayPhoto){
         var firstImgStr = todayPhoto.splice(0,4).join("");
@@ -39,14 +40,16 @@
         for(var i=0; i<todayPhotoSource.length; i++){
             imgs.push("<div><img src='"+todayPhotoSource[i].img+"'><div>"+todayPhotoSource[i].title+"</div></div>");
         }
-        return imgs
+        return imgs;
     };
+
     TodayPhotoBox.prototype.createTitleHtml = function(title){
         titleHtml = "<div><h1>"+title+"</h1></div>";
-    }
+    };
 
     TodayPhotoBox.prototype.createBtnHtml = function(){
         var str = "<button id ='"+ preBtnId +"'>&lt;</button>";
+        str = str + "<strong id = '"+currentIndex+"'>1</strong><span>/</span>2"
         str = str + "<button id ='"+ nextBtnId +"'>&gt;</button>";
         btnHtml = str;
     };
@@ -70,6 +73,18 @@
             page1.className = "hide";
             page2.className = "";
         }
+
+//      this.changeIndex();
+        var index = document.getElementById(currentIndex);
+        var beforeIndex = index.innerHTML;
+        var afterIndex=0;
+
+        if(beforeIndex == "1"){
+            afterIndex=2;
+        }else if (beforeIndex == "2"){
+            afterIndex=1;
+        }
+        index.innerHTML = afterIndex;
     };
 
 
