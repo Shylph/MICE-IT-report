@@ -3,9 +3,10 @@
 
 .contentBox {width:250px;}
 
-.contentPart {width:125px; float: left;}
-.contentPart p {font-size: 12px;text-align: center}
+.contentPart {width:125px; float: left; text-align: center}
+.contentPart p {font-size: 12px;text-align: center; margin: 0px 4px;
+}
 
 .contentTitle h1 {font-size: 20px; border-bottom: 1px black solid;}
 
-.contentBtn {text-align: center}
+.contentBtn {float:left;text-align: center;width: 250px}
