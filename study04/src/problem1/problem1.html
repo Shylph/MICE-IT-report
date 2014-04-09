@@ -6,11 +6,17 @@
     <link rel="stylesheet" href="problem1.css"/>
 </head>
 <body>
+    <script src="TodayPhotoBox.js"></script>
+    <script src="photoSource.js"></script>
+
     <div id="wrap"></div>
-    <button id="nextBtn"></button>
-
-    <script src="problem1.js"></script>
-
+    <script>
+        //test
+        var box = new TodayPhotoBox(todayPhotoSource);
+        box.createTitleHtml("오늘의 사진");
+        box.displayPhotoBox("wrap");
+        box.addBtnEventListener();
+    </script>
 
 </body>
 </html>
