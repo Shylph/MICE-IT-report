@@ -2,7 +2,6 @@ var board = document.getElementById("board");
 
 for(var i=0; i<4; i++){
     for(var j=0; j<4; j++){
-        // TODO : 여기에 필요한 코드를 작성해주세요.
         var color = Array(2);
         color[0] = "black";
         color[1] = "white";
@@ -28,10 +27,8 @@ for(var i=0; i<4; i++){
                     beforeSquare.className = "white";
                 }
             }
-
             var target = event.target;
             target.className="red";
         });
-
     }
 }
