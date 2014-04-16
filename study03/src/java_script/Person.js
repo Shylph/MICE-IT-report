@@ -11,7 +11,8 @@
     };
 
     Person.prototype.getSMS = function (){
-
+        var message = this.phone.getMessage();
+        console.log(message);
     };
     Person.prototype.getName = function(){
         return this.name;
