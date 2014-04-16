@@ -17,19 +17,18 @@
         var inputBox = document.getElementById(inputBoxId);
         return inputBox.value;
     };
-    Multiplication.prototype.getInputBox = function () {
-        return document.getElementById(inputBoxId);
+    Multiplication.prototype.checkedInputValidity = function () {
+        var inputbox = document.getElementById(inputBoxId);
+        return inputbox.checkValidity();
     };
     Multiplication.prototype.setResult = function (source) {
         var resultBox = document.getElementById(resultBoxId);
         resultBox.innerHTML = source;
     };
     Multiplication.prototype.clickEvent = function () {
-        //입력 받기
-        var inputBox = this.getInputBox();
         var operand1 = this.getInputValue();
 
-        if (inputBox.checkValidity()) {
+        if (this.checkedInputValidity()) {
             var str = "";
             for (var operand2 = 1; operand2 <= 9; operand2++) {
                 str = str + "<br>" + operand1 + "x" + operand2 + "=" + operand1 * operand2;
