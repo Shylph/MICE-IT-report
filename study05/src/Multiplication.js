@@ -12,8 +12,13 @@
         var button = document.getElementById(buttonId);
         button.addEventListener("click", this.clickEvent);
     };
+    Multiplication.prototype.getInputValue = function(){
+        var inputBox = document.getElementById(inputBoxId);
+        return inputBox.value;
+    };
     Multiplication.prototype.clickEvent = function(){
         //입력 받기
+        //this.getInputValue() 호출 불가
         var inputBox = document.getElementById(inputBoxId);
         var operand1 = inputBox.value;
 
