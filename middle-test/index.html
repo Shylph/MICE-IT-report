@@ -13,7 +13,11 @@
     imgs.push("naver_com_20121024_134558.png");
     imgs.push("dnRl2.jpg");
     window.onload = function(){
-        setInterval("gogo()",1000); /// 1초마다 5초 5000
+        t = setInterval("gogo()",1000); /// 1초마다 5초 5000
+        setTimeout(function(){
+            clearInterval(t);
+        },5000);
+
     }
     function gogo(){
         var dt = new Date();
