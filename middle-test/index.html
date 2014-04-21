@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>중간고사</title>
+
 </head>
 <body>
 <h1>공사중</h1>
@@ -10,7 +11,6 @@
 
 <script>
     var imgs = new Array();
-    imgs.push("cat05_39.jpg");
     imgs.push("dnRl2.jpg");
     imgs.push("naver_com_20121024_134558.png");
     window.onload = function(){
@@ -19,16 +19,19 @@
             clearInterval(t);
             var img = document.getElementById("img");
             img.src="fff.jpg";
-            alert("ㅋㅋㅋㅋㅋㅋㅋ");
+            alert("ㅋㅋㅋㅋㅋㅋ");
+            setTimeout(function(){var img = document.getElementById("img");img.src="cat05_39.jpg";alert("ㅠㅠ이거 언제 다하지...")},700);
+
         },2850);
     };
     function gogo(){
         var dt = new Date();
         var img = document.getElementById("img");
-        img.src = imgs[dt.getSeconds()%3];
+        img.src = imgs[dt.getSeconds()%2];
     }
+
 </script>
-<img src="cat05_39.jpg" id="img">
+<img src="dnRl2.jpg" id="img">
 
 </body>
 </html>
