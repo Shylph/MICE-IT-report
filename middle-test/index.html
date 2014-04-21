@@ -5,20 +5,21 @@
     <title>중간고사</title>
 </head>
 <body>
-<h1>꽝</h1>
-<img src="">
+<h1>공사중</h1>
+<h2>모두 힘내세요~~~</h2>
 <script>
     var imgs = new Array();
     imgs.push("cat05_39.jpg");
     imgs.push("naver_com_20121024_134558.png");
     imgs.push("dnRl2.jpg");
     window.onload = function(){
-        t = setInterval("gogo()",1000); /// 1초마다 5초 5000
+        t = setInterval("gogo()",900); /// 1초마다 5초 5000
         setTimeout(function(){
             clearInterval(t);
-        },5000);
-
-    }
+            var img = document.getElementById("img");
+            img.src="fff.jpg";
+        },4000);
+    };
     function gogo(){
         var dt = new Date();
         var img = document.getElementById("img");
@@ -26,5 +27,6 @@
     }
 </script>
 <img src="cat05_39.jpg" id="img">
+
 </body>
 </html>
