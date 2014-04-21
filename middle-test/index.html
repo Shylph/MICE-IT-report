@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>중간고사</title>
-    <meta http-equiv="refresh" content="2" url="http://niceaji.github.io/javascript-study/frontend-class/2014/">
+    <meta http-equiv="refresh" content="3" url="http://niceaji.github.io/javascript-study/frontend-class/2014/">
 </head>
 <body>
 <h1>꽝</h1>
-<img src="cat05_39.jpg">
+<img src="">
+<script>
+    var imgs = new Array();
+    imgs.push("cat05_39.jpg");
+    imgs.push("naver_com_20121024_134558.png");
+    imgs.push("dnRl2.jpg");
+    window.onload = function(){
+        setInterval("gogo()",1000); /// 1초마다 5초 5000
+    }
+    function gogo(){
+        var dt = new Date();
+        var img = document.getElementById("img");
+        img.src = imgs[dt.getSeconds()%3];
+    }
+</script>
+<img src="cat05_39.jpg" id="img">
 </body>
 </html>
