@@ -8,7 +8,6 @@
         buttonId = btnId;
         resultBoxId = resultId;
     }
-
     Multiplication.prototype.addBtnEventListener = function () {
         var button = document.getElementById(buttonId);
         button.addEventListener("click", this.clickEvent.bind(this));

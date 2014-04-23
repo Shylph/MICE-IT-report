@@ -3,35 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>중간고사</title>
-
+    <link rel="stylesheet" type="text/css" href="app.css">
 </head>
 <body>
-<h1>공사중</h1>
-<h2>모두 힘내세요~~~</h2>
+<script src="data.js"></script>
+<script src="templateFunction.js"></script>
+<script src="app.js"></script>
+
+<div id="container"></div>
+
+<script type="text/template" id="boxTemplate">
+    <div id="newsGrp">
+        <h2 id="newsTitle" class="tab titleShowBorder"><span>뉴스</span></h2>
+        <div id="news" class="box">
+            <ul class="mainUl">
+                {{liNews}}
+            </ul>
+            <button id="btnMoreNews" class="btnMore">더보기</button>
+        </div>
+
+        <h2 id="entertainTitle" class="tab titleHideBorder"><span>연예</span></h2>
+        <div id="entertain" class="box hide">
+            <ul>
+                {{liEntertain}}
+            </ul>
+            <button id="btnMoreEnter" class="btnMore">더보기</button>
+        </div>
+
+        <h2 id="sportsTitle" class="tab titleHideBorder"><span>스포츠</span></h2>
+        <div id="sports" class="box hide">
+            <ul>
+                {{liSports}}
+            </ul>
+            <button id="btnMoreSports" class="btnMore">더보기</button>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="liTemplate">
+    <li class="txt {{visibleState}}"><a href="http://media.daum.net/v/{{newsId}}" target="_blank">{{title}}</a></li>
+</script>
 
 <script>
-    var imgs = new Array();
-    imgs.push("dnRl2.jpg");
-    imgs.push("naver_com_20121024_134558.png");
-    window.onload = function(){
-        t = setInterval("gogo()",700);
-        setTimeout(function(){
-            clearInterval(t);
-            var img = document.getElementById("img");
-            img.src="fff.jpg";
-            alert("ㅋㅋㅋㅋㅋㅋ");
-            setTimeout(function(){var img = document.getElementById("img");img.src="cat05_39.jpg";alert("ㅠㅠ이거 언제 다하지...")},700);
-
-        },2850);
-    };
-    function gogo(){
-        var dt = new Date();
-        var img = document.getElementById("img");
-        img.src = imgs[dt.getSeconds()%2];
-    }
-
+    var box = new Box();
 </script>
-<img src="dnRl2.jpg" id="img">
+
 
 </body>
 </html>
