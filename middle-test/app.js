@@ -69,6 +69,7 @@
         this.callAjax('data.js', this.callbackDataAjax.bind(this));
     };
 
+
     Box.prototype.init = function(){
         news = this.getDom('news');
         entertain = this.getDom('entertain');

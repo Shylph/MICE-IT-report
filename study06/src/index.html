@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>study06</title>
+    <style>
+        #box{
+            position: absolute;
+            background-color: red;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+        }
+        #btn{
+            position: absolute;
+            z-index: 1;
+            width: 50px;
+            height: 30px
+        }
+    </style>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="./../../js/jquery-2.1.1.min.js"><\/script>')</script>
+
+<div id="box"></div>
+<button id="btn">버튼</button>
+
+<script>
+    (function(){
+        var cnt = 0;
+        $('#btn').click(function(){
+            cnt++;
+            $('#box').toggleClass(
+                    function(){
+                        if(cnt % 2 == 1) {
+                            $('#box').animate({
+                                'top': $(window).height() - 100,
+                                'left': $(window).width() - 100
+                            }, 1000, function () {
+                                console.log('구석 도착!');
+                            });
+                        }
+                        else{
+                            $('#box').animate({
+                                'top' : 0,
+                                'left' : 0
+                            },1000, function(){
+                                console.log('처음위치 도착!');
+                            });
+                        }
+                    }
+            );
+        })
+    })();
+</script>
+</body>
+</html>
