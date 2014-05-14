@@ -35,7 +35,7 @@
         var dataList = JSON.parse(responseText);
         var templateString = this.getDom('boxTemplate').innerHTML;
         var parseString = [];
-        var data = '';;
+        var data = '';
 
         var liNewsString = this.createLiString(dataList[0]["news"]);;
 

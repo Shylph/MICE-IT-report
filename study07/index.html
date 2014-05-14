@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Daum OpenAPI</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 <script src="templateFunction.js"></script>
@@ -15,9 +16,10 @@
     </form>
     <div id="content">
         <script type="text/template" id="pTemplate">
-                <p><a href="{{link}}" target="_blank">{{title}}</a></p>
+                <a href="{{link}}" target="_blank">{{title}}</a><br>
         </script>
     </div>
+    <button class="hide" id="moreBtn">더보기</button>
 </div>
 
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
