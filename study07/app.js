@@ -12,11 +12,11 @@
             dataType: 'jsonp',
             complete: function (jqXHR, status) {
                 var data = jqXHR.responseJSON;
-
                 var items = data.channel.item;
                 for (var i = 0; i < items.length; i++) {
                     templateString = $('#pTemplate').text();
-                    $('#content').append((template(templateString,{title:items[i].title,link:items[i].link})))
+                    var title = items[i].title.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+                    $('#content').append((template(templateString,{title:title,link:items[i].link})))
                 }
                 $('#moreBtn').toggle();
             }
@@ -37,7 +37,8 @@
                 var items = data.channel.item;
                 for (var i = 0; i < items.length; i++) {
                     templateString = $('#pTemplate').text();
-                    $('#content').append((template(templateString,{title:items[i].title,link:items[i].link})))
+                    var title = items[i].title.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+                    $('#content').append((template(templateString,{title:title,link:items[i].link})))
                 }
             }
         });
