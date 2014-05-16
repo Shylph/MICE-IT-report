@@ -1,0 +1,1 @@
+node Multiplication.js %1
